@@ -1,0 +1,33 @@
+
+.App{
+  display: flex;
+  justify-content: center;
+  
+}
+.App .menu{
+  z-index: 1;
+  width: 556px;
+  overflow: hidden;
+  margin-top: 10vh;
+  height: 100vh;
+}
+header{
+  z-index: 0;
+  position: relative;
+  background-color: aqua;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 7vh;
+}
+
+.App  .menu .page{
+  width: 70%;
+  height: 20%;
+  background-color: brown;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 15px;
+  
+}

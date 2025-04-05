@@ -1,0 +1,24 @@
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .menu-box {
+    width: 300px;
+    height: 15vh;
+    background-color: #f4a261;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-box:hover {
+    transform: translateY(5px);
+    background-color: #e76f51;
+  }
