@@ -7,9 +7,7 @@ const Burgers = () => {
   return (
     <div style={styles.page}>
       <h1>Burgers Page</h1>
-      <button style={styles.button} onClick={() => navigate('/')}>
-        Back to Home
-      </button>
+      
     </div>
   );
 };

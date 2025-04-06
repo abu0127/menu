@@ -1,31 +1,42 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Link,
+  Route,
+  RouterProvider,
+  useLocation
+} from 'react-router-dom';
 import Burgers from './pages/Burgers';
 import Pizzas from './pages/Pizzas';
 import Menu from './pages/Menu';
-import Header from './Header';
+import Drinks from './pages/Drinks';
+import Layout from './Layout';
 
-function AppContent() {
-  const location = useLocation();
 
-  return (
-    <>
-    <Header/>
-      {location.pathname === '/' && <Menu />}
-      <Routes>
-        <Route path="/" element={<></>} />
-        <Route path="/burgers" element={<Burgers />} />
-        <Route path="/pizzas" element={<Pizzas />} />
-      </Routes>
-    </>
-  );
-}
 
 function App() {
+
+  const routes = createBrowserRouter(
+    createRoutesFromElements(
+      <Route element={<Layout/>}>
+        <Route path='/menu' element={<Menu/>}/>
+        <Route path='/burgers' element={<Burgers/>}/>
+        <Route path='/pizzas' element={<Pizzas/>}/>
+        <Route path='/drinks' element={<Drinks/>}/>
+      </Route>
+    )
+  )
+
   return (
-    <Router>
-      <AppContent />
-    </Router>
+
+    <>
+
+      
+     <RouterProvider router={routes}/>
+    </>
+
+    
   );
 }
 
