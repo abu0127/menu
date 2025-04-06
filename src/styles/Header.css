@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #4cff43;
+    background-color: #89b4d4;
     color: white;
     padding: 15px 20px;
     position:fixed;
@@ -17,18 +17,19 @@
     font-size: 20px;
     font-weight: bold;
   }
+  .navigation{
+    font-size: 19px;
+  }
   
   .back-button {
-    background-color: #4cff43;
-    position: absolute;
-    top: 6.5vh;
-    left: 0;
-    color: white;
+    background-color: transparent;
     border: none;
     padding: 8px 14px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 0 0 50px 0;
+    font-size: 22px;
+    color: white;
   }
   
   .page-title {
