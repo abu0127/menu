@@ -1,63 +1,65 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import Loader from "./components/Loader";
 import Animation from "./components/Animation";
 import './styles/layout.css';
 
 const Layout = () => {
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState(null);
-    const location = useLocation();
-    const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        setTimeout(() => {
-            setData("Ma'lumot yuklandi!");
-            setLoading(false);
-        }, 1000);
-    }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
 
-    const localTitle = useMemo(() => {
-        const path = location.pathname.toLowerCase();
-        if (path === "/") return 'Assalomu aleykum';
-        if (path.includes("ichimliklar")) return 'Ichimliklar';
-        if (path.includes("shirinliklar")) return 'Shirinliklar';
-        return '';
-    }, [location.pathname]);
+    return () => clearTimeout(timer);
+  }, []);
 
-    function back() {
-        navigate(-1);
-    }
+  const localTitle = useMemo(() => {
+    const path = location.pathname.toLowerCase();
+    if (path === "/") return 'Assalomu aleykum';
+    if (path.includes("ichimliklar")) return 'Ichimliklar';
+    if (path.includes("shirinliklar")) return 'Shirinliklar';
+    return '';
+  }, [location.pathname]);
 
-    return (
-        <div className="container">
-            {loading && <Loader />}
-            <header>
-                <div className="logo">logo</div>
-                {location.pathname !== "/" && (
-                    <div className="back" onClick={() => back()}>
-                        <Animation>
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Animation>
-                    </div>
-                )}
-                <div className="location">
-                    <Animation key={localTitle}>
-                        {localTitle}
-                    </Animation>
-                </div>
-            </header>
+  const handleBack = () => navigate(-1);
 
-            <main>
-                <Outlet />
-            </main>
+  return (
+    <div className="container">
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <header>
+            <div className="logo">LOGO</div>
+            {location.pathname !== "/" && (
+              <div className="back" onClick={handleBack}>
+                <Animation>
+                  <i className="fa-solid fa-arrow-left"></i>
+                </Animation>
+              </div>
+            )}
+            <div className="location">
+              <Animation key={localTitle}>
+                {localTitle}
+              </Animation>
+            </div>
+          </header>
 
-            <footer style={{ marginTop: '30px', textAlign: 'center' }}>
-                &copy; 2025 | My Menu App
-            </footer>
-        </div>
-    );
+          <main>
+            <Outlet />
+          </main>
+
+          <footer>
+            &copy; {new Date().getFullYear()} | My Menu App
+          </footer>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default Layout;

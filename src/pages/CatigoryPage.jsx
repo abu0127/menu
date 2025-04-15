@@ -1,17 +1,25 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import "../styles/category.css";
 
-export default function CategoryPage() {
+const CategoryPage = () => {
   const category = useLoaderData();
   
   return (
-    <div className="category-page">
-      <h1>{category.category}</h1>
+    <div className="category-container">
+      <h1 className="category-title">{category.category}</h1>
       <div className="products-grid">
         {category.items.map(item => (
-          <ProductCard key={item.id} name={item.name} price={item.price} />
+          <ProductCard 
+            key={item.id} 
+            name={item.name} 
+            price={item.price} 
+            image={item.image} 
+          />
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default CategoryPage;
