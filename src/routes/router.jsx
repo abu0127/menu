@@ -24,12 +24,12 @@ const categoryLoader = async ({ params }) => {
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Home />,
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <main/>
       },
       {
         path: "category/:categoryName",
