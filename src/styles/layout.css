@@ -7,7 +7,10 @@
     list-style: none;
 }
 :root {
-    --main-txt-color:
+    --txt-color:#000000;
+    --txt-size: 22px;
+    --title-size: 28px;
+    --title-weight: 900;
 }
 header{
     width: 100%;
@@ -17,6 +20,7 @@ header{
     display: flex;
     align-items: center;
     z-index: 100;
+ 
 }
 header .location{
     position: absolute;
@@ -46,7 +50,7 @@ main{
     height: 90vh;
     margin: 0 5% 0 5%;
     padding-top: 4%;
-    background-color: rgb(201, 126, 255);
+    
 }
 
 

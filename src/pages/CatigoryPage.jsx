@@ -7,7 +7,7 @@ const CategoryPage = () => {
   
   return (
     <div className="category-container">
-      <h1 className="category-title">{category.category}</h1>
+     
       <div className="products-grid">
         {category.items.map(item => (
           <ProductCard 

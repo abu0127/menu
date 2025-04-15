@@ -38,7 +38,7 @@ const Layout = () => {
             {location.pathname !== "/" && (
               <div className="back" onClick={handleBack}>
                 <Animation>
-                  <i className="fa-solid fa-arrow-left"></i>
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
                 </Animation>
               </div>
             )}

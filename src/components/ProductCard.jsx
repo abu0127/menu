@@ -1,15 +1,29 @@
 import Animation from "./Animation";
 import "../styles/product-card.css";
 
-const ProductCard = ({ name, price, image }) => (
+const ProductCard = ({ id, name, price, image, description }) => (
   <Animation>
     <div className="product-card">
-      <div className="product-image">
-        <img src={image || "/default-product.png"} alt={name} />
+      <div className="product-image-container">
+        <img 
+          src={image || "/images/default-product.png"} 
+          alt={name}
+          className="product-image"
+          onError={(e) => {
+            e.target.src = "/images/default-product.png";
+          }}
+        />
+        {/* You can add a badge or favorite icon here */}
       </div>
-      <div className="product-info">
-        <h4>{name}</h4>
-        <p className="price">{price} so'm</p>
+      <div className="product-details">
+        <h3 className="product-title">{name}</h3>
+        {description && <p className="product-description">{description}</p>}
+        <div className="product-footer">
+          <span className="product-price">{price.toLocaleString()} so'm</span>
+          <button className="add-to-cart-btn">
+            <i className="fas fa-cart-plus"></i> {/* FontAwesome icon */}
+          </button>
+        </div>
       </div>
     </div>
   </Animation>

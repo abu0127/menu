@@ -1,0 +1,49 @@
+.category-list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+}
+ .category-link{
+    display: block;
+    border-radius: 15px;
+    width: 300px;
+    height:150px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.608);
+}
+.category-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;  /* Rasm proporsiyasini saqlaydi */
+    z-index: 1;
+  }
+  /* home.css */
+.category-card {
+    position: relative; /* Rasm va matnni nisbiy joylashtirish */
+    border-radius: 12px;
+    overflow: hidden;
+    
+    height: 200px; /* Belgilangan balandlik */
+    z-index: 2;
+  }
+  
+  .category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rasm proporsiyasini saqlab qoladi */
+    z-index: 1;
+  }
+  .category-title{
+    position: absolute;
+    font-size: var(--txt-size);
+    color: var(--txt-color);
+    font-weight: var(--title-weight);
+    font-size:var(--title-size) ;
+    padding: 20px;
+  }
+  
+  

@@ -7,5 +7,5 @@ export default defineConfig({
     historyApiFallback: true,
     port: 5173
   },
-   base: '/menu/' 
+
 })

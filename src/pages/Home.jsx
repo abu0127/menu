@@ -6,21 +6,27 @@ import "../styles/home.css";
 const Home = () => {
   return (
     <div className="home-page">
-      <h2>Menu Kategoriyalari</h2>
-      <ul className="category-list">
+      <div className="category-list">
         {menu.map((cat, i) => (
-          <li key={i}>
-            <Animation>
-              <Link 
-                to={`/category/${cat.category.toLowerCase()}`}
-                className="category-link"
-              >
-                {cat.category}
-              </Link>
-            </Animation>
-          </li>
+          <Animation key={i}>
+            <Link
+              to={`/category/${cat.category.toLowerCase()}`}
+              className="category-link"
+            >
+              <div className="category-card">
+                {/* Kategoriya rasmi */}
+                <div className="category-title">{cat.category}</div>
+                <img 
+                  src={cat.image} 
+                  alt={cat.category} 
+                  className="category-image"
+                />
+               
+              </div>
+            </Link>
+          </Animation>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
