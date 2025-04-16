@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
-import "../styles/category.css";
+import "../styles/products.css";
 
 const CategoryPage = () => {
   const category = useLoaderData();

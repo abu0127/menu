@@ -1,0 +1,14 @@
+.category-container{
+    height: 95%;
+   
+    overflow-y: scroll;
+    padding: 10px ;
+   
+    
+}
+
+.products-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2%;
+}

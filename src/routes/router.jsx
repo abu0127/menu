@@ -47,4 +47,9 @@ export const router = createBrowserRouter([
       }
     ]
   }
-]);
+],
+{
+  basename:"/menu"
+}
+
+);

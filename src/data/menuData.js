@@ -7,13 +7,19 @@ export const menu = [
         id: 1,
         name: "Coca-Cola",
         price: 12000,
-        image: "/images/coca-cola.png"
+        image: "../images/cocacola.jpg"
       },
       {
         id: 2,
-        name: "Fanta",
+        name: "Pepsi",
         price: 11000,
-        image: "/images/fanta.png"
+        image: "../images/pepsi.jpg"
+      },
+      {
+        id: 3,
+        name: "Red Bull",
+        price: 20000,
+        image: "../images/redbul.jpg"
       }
     ]
   },
