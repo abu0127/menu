@@ -20,7 +20,7 @@ const Layout = () => {
 
   const localTitle = useMemo(() => {
     const path = location.pathname.toLowerCase();
-    if (path === "/") return 'Assalomu aleykum';
+    if (path === "/") return '';
     if (path.includes("ichimliklar")) return 'Ichimliklar';
     if (path.includes("shirinliklar")) return 'Shirinliklar';
     return '';

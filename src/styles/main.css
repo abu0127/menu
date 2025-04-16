@@ -1,16 +1,26 @@
 @font-face {
     font-family: 'TheSmithey';
-    src: url('../TitlesFont/TheSmithey.woff2') format('woff2'),
-        url('../TitlesFont/TheSmithey.woff') format('woff');
+    src: url('../../public/LOGO/BailamoreFPU-Regular.woff2') format('woff2'),
+        url('../../public/LOGO/TheSmithey.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'CHICKENPieHeight';
+    src: url('../../public/titleFont/CuteDino.woff2') format('woff2'),
+        url('../../public/titleFont/CuteDino.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
+
 :root {
-    --txt-color:#272525;
+    --txt-color:#fafafa;
     --txt-size: 22px;
     --title-size: 38px;
     --title-weight: 900;
-    --title-font: 'TheSmithey';
+    --logo-font: 'TheSmithey';
+    --title-font:"CHICKENPieHeight";
 }
