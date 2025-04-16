@@ -1,7 +1,11 @@
-export const menu = [
+ 
+ import drinks from "../../public/images/drinks.jpg"
+ import cake from "../../public/images/cake.jpg"
+ 
+ export const menu = [
   {
     category: "Ichimliklar",
-    image: "../images/drinks.jpg", // Kategoriya uchun rasm
+    image: drinks, // Kategoriya uchun rasm
     items: [
       {
         id: 1,
@@ -25,7 +29,7 @@ export const menu = [
   },
   {
     category: "Shirinliklar",
-    image: "../images/cake.jpg", // Kategoriya uchun rasm
+    image: cake, // Kategoriya uchun rasm
     items: [
       {
         id: 3,

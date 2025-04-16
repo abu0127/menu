@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { menu } from "../data/menuData";
 import Animation from "../components/Animation";
 import "../styles/home.css";
+import "../styles/main.css"
 
 const Home = () => {
   return (

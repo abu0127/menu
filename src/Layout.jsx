@@ -4,6 +4,7 @@ import Loader from "./components/Loader";
 import Animation from "./components/Animation";
 import './styles/layout.css';
 
+
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
@@ -34,7 +35,7 @@ const Layout = () => {
       ) : (
         <>
           <header>
-            <div className="logo">LOGO</div>
+            <div className="logo">Martian</div>
             {location.pathname !== "/" && (
               <div className="back" onClick={handleBack}>
                 <Animation>
