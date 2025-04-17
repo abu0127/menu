@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import Loader from "./components/Loader";
 import Animation from "./components/Animation";
 import './styles/layout.css';
+import ".//styles/modal.css"
 
 
 const Layout = () => {
@@ -38,23 +39,20 @@ const Layout = () => {
 
             {location.pathname !== "/" && (
               <div className="back" onClick={handleBack}>
-                <Animation>
+                <Animation key={`back-${location.pathname}`}>
                   <i className="fa-solid fa-arrow-left"></i>
                 </Animation>
               </div>
             )}
             <div className="logo">
-            <Animation>
-              <span>
-                Martian
-              </span>
+              <Animation key={`logo-${localTitle}`}> {/* Har bir yangi localTitle uchun yangi key */}
+                <span>Martian</span>
               </Animation>
               <div className="location">
-                <Animation key={localTitle}>
+                <Animation key={`location-${localTitle}`}>
                   {localTitle}
                 </Animation>
               </div>
-
             </div>
 
 
