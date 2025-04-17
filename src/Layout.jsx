@@ -35,19 +35,29 @@ const Layout = () => {
       ) : (
         <>
           <header>
-            <div className="logo">Martian</div>
+
             {location.pathname !== "/" && (
               <div className="back" onClick={handleBack}>
                 <Animation>
-                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                  <i className="fa-solid fa-arrow-left"></i>
                 </Animation>
               </div>
             )}
-            <div className="location">
-              <Animation key={localTitle}>
-                {localTitle}
+            <div className="logo">
+            <Animation>
+              <span>
+                Martian
+              </span>
               </Animation>
+              <div className="location">
+                <Animation key={localTitle}>
+                  {localTitle}
+                </Animation>
+              </div>
+
             </div>
+
+
           </header>
 
           <main>

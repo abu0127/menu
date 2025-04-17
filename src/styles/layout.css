@@ -14,39 +14,43 @@ header {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     z-index: 100;
 
 }
 
 header .location {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+
     font-size: 14px;
     font-family: var(--title-font);
     font-style: italic;
     opacity: 65%;
+   ;
 }
 
 header .back {
     position: absolute;
-    right: 5%;
+    left: 5%;
     background: #E4EFC0;
-    background: linear-gradient(to right, #ccdb9c 0%, #9aac67 100%);
+    background: linear-gradient(to right, #ff4141 0%, #d11500 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 20px;
+    font-size: 24px;
+    transition: all 1s;
+}
+header .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-header .logo {
-    position: absolute;
-    left: 5%;
+header .logo span {
+    position: relative;
     letter-spacing: 1px;
-    font-size: 28px;
+    font-size: 32px;
     font-family: var(--logo-font);
     background: #E4EFC0;
-    background: linear-gradient(to right, #ccdb9c 0%, #9aac67 100%);
+    background: linear-gradient(to right, #ff4141 0%, #d11500 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     

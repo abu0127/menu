@@ -16,11 +16,12 @@
 }
 
 
-:root {
+:root { 
     --txt-color:#fafafa;
     --txt-size: 22px;
     --title-size: 38px;
     --title-weight: 900;
     --logo-font: 'TheSmithey';
     --title-font:"CHICKENPieHeight";
+    
 }
