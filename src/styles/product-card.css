@@ -57,13 +57,31 @@
     align-items: center;
     margin-top: 12px;
   }
+  .product-footer div{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
   
   .product-price {
     font-weight: 700;
     color: #e63946;
-    font-size: 1.1rem;
+    
   }
-  
+  .discount-price{
+    font-weight: 700;
+    color: #e63946;
+    
+  }
+  .discount-hide{
+     opacity: 0;
+  }
+  .originalPrice-hide{
+    text-decoration: line-through;
+    color: #3333339f;
+  }
+
+ 
   .add-to-cart-btn {
     background: linear-gradient(to right, #ff4141 0%, #d11500 100%);
     color: white;

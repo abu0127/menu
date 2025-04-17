@@ -21,6 +21,8 @@ const CategoryPage = () => {
               price={item.price} 
               image={item.image} 
               description={item.description}
+              originalPrice={item.originalPrice}
+              discount={item.discount}
             />
           </div>
         ))}

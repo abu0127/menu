@@ -1,7 +1,7 @@
 import Animation from "./Animation";
 import "../styles/product-card.css";
 
-const ProductCard = ({ name, price, image, description }) => (
+const ProductCard = ({ name, price, image, description, originalPrice, discount }) => (
   <Animation>
     <div className="product-card">
       <div className="product-image-container">
@@ -18,7 +18,11 @@ const ProductCard = ({ name, price, image, description }) => (
         <h3 className="product-title">{name}</h3>
         {description && <p className="product-description">{description.substring(0, 60)}...</p>}
         <div className="product-footer">
-          <span className="product-price">{price.toLocaleString()} so'm</span>
+          <div>
+            <span className={ discount ? "originalPrice-hide" : 'product-price'}>{originalPrice.toLocaleString()} so'm</span>
+            <span className={discount ? "discount-price ": "discount-hide"}>{price.toLocaleString()} so'm</span>
+          </div>
+          
           <button className="add-to-cart-btn">
             <i className="fas fa-cart-plus"></i>
           </button>

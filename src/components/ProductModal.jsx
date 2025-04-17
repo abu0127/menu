@@ -19,7 +19,7 @@ const ProductModal = ({ product, onClose }) => {
           initial={{ y: '100%' }}
           animate={{ y: 0 }}
           exit={{ y: '100%' }}
-          transition={{ type: 'spring', damping: 25 }}
+          transition={{ type: 'spring', damping: 12 }}
           onClick={(e) => e.stopPropagation()}
         >
           <button className="modal-close-btn" onClick={onClose}>
