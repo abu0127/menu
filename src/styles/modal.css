@@ -50,7 +50,7 @@
   }
   
   .modal-details {
-    padding: 0 10px;
+    padding: 0 25px;
   }
   
   .modal-price {
@@ -106,3 +106,127 @@
       height: 300px;
     }
   }
+
+  /* Add these to your existing modal.css */
+.cart-modal {
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.empty-cart {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.cart-items {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 10px;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-price {
+  margin: 5px 0;
+}
+
+.discounted-price {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9em;
+  margin-left: 5px;
+}
+
+.cart-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  margin: 0 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #45a049;
+}

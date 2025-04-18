@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    user-select: none;
 }
 
 
@@ -36,7 +37,7 @@ header .back {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 24px;
-    transition: all 1s;
+    
 }
 header .logo{
     display: flex;
@@ -57,6 +58,17 @@ header .logo span {
     
 }
 
+header .cart-plus{
+    position: absolute;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #E4EFC0;
+    border: none;
+    outline: none;
+    background:linear-gradient(to right, #ff4141 0%, #d11500 100%);
+}
 
 .container {
     max-width: 556px;

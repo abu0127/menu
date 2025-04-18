@@ -2,14 +2,16 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import Loader from "./components/Loader";
 import Animation from "./components/Animation";
+import CartModal from "./components/CartModal"; // Create this component
+import { useCart } from "./components/CartContext";
 import './styles/layout.css';
-import ".//styles/modal.css"
-
+import "./styles/modal.css";
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
+  const { toggleCart, isCartOpen } = useCart();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,7 +38,6 @@ const Layout = () => {
       ) : (
         <>
           <header>
-
             {location.pathname !== "/" && (
               <div className="back" onClick={handleBack}>
                 <Animation key={`back-${location.pathname}`}>
@@ -45,7 +46,7 @@ const Layout = () => {
               </div>
             )}
             <div className="logo">
-              <Animation key={`logo-${localTitle}`}> {/* Har bir yangi localTitle uchun yangi key */}
+              <Animation key={`logo-${localTitle}`}>
                 <span>Martian</span>
               </Animation>
               <div className="location">
@@ -55,7 +56,13 @@ const Layout = () => {
               </div>
             </div>
 
-
+            {location.pathname !== "/" && (
+              <button className="cart-plus" onClick={toggleCart}>
+                <Animation>
+                  <i className="fas fa-cart-plus"></i>
+                </Animation>
+              </button>
+            )}
           </header>
 
           <main>
@@ -65,6 +72,8 @@ const Layout = () => {
           <footer>
             &copy; {new Date().getFullYear()} | My Menu App
           </footer>
+
+          {isCartOpen && <CartModal />}
         </>
       )}
     </div>

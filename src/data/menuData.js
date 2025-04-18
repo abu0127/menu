@@ -46,12 +46,13 @@ export const menu = [
       },
       {
         id: 5,
-        name: "Chizkeyk",
+        name: "Sansibastan",
         originalPrice: 35000,
         discount: 14,
         image: "/images/cheesecake.png",
         isOnSale: true
-      }
+      },
+      
     ]
   }
 ];
