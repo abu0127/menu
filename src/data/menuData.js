@@ -9,7 +9,6 @@ export const menu = [
       {
         id: 1,
         name: "Coca-Cola",
-        price: 12000,
         originalPrice: 15000, // Original price before discount
         discount: '', // 20% discount
         image: "../images/cocacola.jpg",
@@ -18,7 +17,6 @@ export const menu = [
       {
         id: 2,
         name: "Pepsi",
-        price: 11000,
         originalPrice: 13000,
         discount: 28,
         image: "../images/pepsi.jpg",
@@ -27,7 +25,6 @@ export const menu = [
       {
         id: 3,
         name: "Red Bull",
-        price: 20000,
         originalPrice: 20000,
         discount: 0,
         image: "../images/redbul.jpg",
@@ -42,7 +39,6 @@ export const menu = [
       {
         id: 4,
         name: "Medovik",
-        price: 25000,
         originalPrice: 30000,
         discount: 17,
         image: "/images/medovik.png",
@@ -51,7 +47,6 @@ export const menu = [
       {
         id: 5,
         name: "Chizkeyk",
-        price: 30000,
         originalPrice: 35000,
         discount: 14,
         image: "/images/cheesecake.png",

@@ -14,7 +14,7 @@ const CategoryPage = () => {
         {category.items.map(item => (
           <div 
             key={item.id} 
-            onClick={() => setSelectedProduct(item)}
+            onClick={() => item.isOnSale && setSelectedProduct(item)}
           >
             <ProductCard 
               name={item.name} 
@@ -23,6 +23,7 @@ const CategoryPage = () => {
               description={item.description}
               originalPrice={item.originalPrice}
               discount={item.discount}
+              isOnSale={item.isOnSale}
             />
           </div>
         ))}

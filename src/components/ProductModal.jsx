@@ -1,6 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 
+function discountPrice(originalPrice, discount = 0) {
+  if (discount > 0) {
+    return originalPrice - (parseInt(originalPrice) * parseInt(discount) / 100);
+  } else {
+    return originalPrice;
+  }
+}
+
 const ProductModal = ({ product, onClose }) => {
   useEffect(() => {
     // Modal ochilganda body scroll ni o'chirish
@@ -38,7 +46,11 @@ const ProductModal = ({ product, onClose }) => {
           
           <div className="modal-details">
             <h2>{product.name}</h2>
-            <p className="modal-price">{product.price.toLocaleString()} so'm</p>
+
+
+            <p className="modal-price">{product.originalPrice.toLocaleString()} so'm</p>
+
+            
             {product.description && (
               <p className="modal-description">{product.description}</p>
             )}

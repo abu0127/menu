@@ -1,29 +1,41 @@
 import Animation from "./Animation";
 import "../styles/product-card.css";
 
-const ProductCard = ({ name, price, image, description, originalPrice, discount }) => (
+function discountPrice(originalPrice, discount = 0) {
+  if (discount > 0) {
+    return originalPrice - (parseInt(originalPrice) * parseInt(discount) / 100);
+  } else {
+    return originalPrice;
+  }
+}
+
+const ProductCard = ({ name, image, description, originalPrice, discount, isOnSale }) => (
   <Animation>
-    <div className="product-card">
+    <div className={`product-card ${!isOnSale ? 'out-of-stock' : ''}`}>
       <div className="product-image-container">
-        <img 
-          src={image || "/images/default-product.png"} 
+        <img
+          src={image || "/images/default-product.png"}
           alt={name}
           className="product-image"
           onError={(e) => {
             e.target.src = "/images/default-product.png";
           }}
         />
+        {!isOnSale && <div className="out-of-stock-label">Mavjud emas</div>}
       </div>
       <div className="product-details">
         <h3 className="product-title">{name}</h3>
         {description && <p className="product-description">{description.substring(0, 60)}...</p>}
         <div className="product-footer">
           <div>
-            <span className={ discount ? "originalPrice-hide" : 'product-price'}>{originalPrice.toLocaleString()} so'm</span>
-            <span className={discount ? "discount-price ": "discount-hide"}>{price.toLocaleString()} so'm</span>
+            <span className={discount ? "originalPrice-hide" : 'product-price'}>
+              {originalPrice} so'm
+            </span>
+            <span className={discount ? "discount-price" : "discount-hide"}>
+              {discountPrice(originalPrice, discount)} so'm
+            </span>
           </div>
-          
-          <button className="add-to-cart-btn">
+          <button className={`add-to-cart-btn ${!isOnSale ? 'disabled' : ''}`} disabled={!isOnSale}>
             <i className="fas fa-cart-plus"></i>
           </button>
         </div>
