@@ -28,11 +28,11 @@ const ProductCard = ({ name, image, description, originalPrice, discount, isOnSa
         {description && <p className="product-description">{description.substring(0, 60)}...</p>}
         <div className="product-footer">
           <div>
-            <span className={discount ? "originalPrice-hide" : 'product-price'}>
-              {originalPrice} so'm
+            <span className={discount  && isOnSale ?  "originalPrice-hide" : 'product-price'}>
+              {originalPrice.toLocaleString()} so'm
             </span>
-            <span className={discount ? "discount-price" : "discount-hide"}>
-              {discountPrice(originalPrice, discount)} so'm
+            <span className={discount && isOnSale ? "discount-price" : "discount-hide"}>
+              {discountPrice(originalPrice, discount).toLocaleString()} so'm
             </span>
           </div>
           <button className={`add-to-cart-btn ${!isOnSale ? 'disabled' : ''}`} disabled={!isOnSale}>

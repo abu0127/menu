@@ -57,7 +57,18 @@
     font-size: 20px;
     font-weight: bold;
     color: #e63946;
-    margin: 10px 0;
+    margin:10px 0;
+  }
+  .modal-discount-price {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #666;
+    font-size: 20px;
+    text-decoration: line-through;
+    
+  }
+  .hide{
+    display: none;
   }
   
   .modal-description {

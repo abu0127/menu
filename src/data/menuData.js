@@ -10,7 +10,7 @@ export const menu = [
         id: 1,
         name: "Coca-Cola",
         originalPrice: 15000, // Original price before discount
-        discount: '', // 20% discount
+        discount: 0, //  discount
         image: "../images/cocacola.jpg",
         isOnSale: true // Flag to indicate item is on sale
       },
@@ -20,7 +20,7 @@ export const menu = [
         originalPrice: 13000,
         discount: 28,
         image: "../images/pepsi.jpg",
-        isOnSale: false
+        isOnSale: true
       },
       {
         id: 3,

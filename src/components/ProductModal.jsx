@@ -1,13 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 
-function discountPrice(originalPrice, discount = 0) {
-  if (discount > 0) {
-    return originalPrice - (parseInt(originalPrice) * parseInt(discount) / 100);
-  } else {
-    return originalPrice;
-  }
-}
+
 
 const ProductModal = ({ product, onClose }) => {
   useEffect(() => {
@@ -18,6 +12,15 @@ const ProductModal = ({ product, onClose }) => {
       document.body.style.overflow = 'auto';
     };
   }, []);
+
+
+  function discountPrice(originalPrice, discount = 0) {
+    if (discount > 0) {
+      return originalPrice - (parseInt(originalPrice) * parseInt(discount) / 100);
+    } else {
+      return originalPrice;
+    }
+  }
 
   return (
     <AnimatePresence>
@@ -33,28 +36,35 @@ const ProductModal = ({ product, onClose }) => {
           <button className="modal-close-btn" onClick={onClose}>
             <i className="fa-solid fa-xmark"></i>
           </button>
-          
+
           <div className="modal-image-container">
-            <img 
-              src={product.image || "/images/default-product.png"} 
+            <img
+              src={product.image || "/images/default-product.png"}
               alt={product.name}
               onError={(e) => {
                 e.target.src = "/images/default-product.png";
               }}
             />
           </div>
-          
+
           <div className="modal-details">
             <h2>{product.name}</h2>
 
+            <p className={product.discount ? "modal-discount-price" : "modal-price"}>
+              {product.originalPrice.toLocaleString()} so'm
+            </p>
 
-            <p className="modal-price">{product.originalPrice.toLocaleString()} so'm</p>
+            <p className={product.discount ? "modal-price " : "hide"}>
+              {
+                discountPrice(product.originalPrice, product.discount).toLocaleString()
+              } so'm
+            </p>
 
-            
+
             {product.description && (
               <p className="modal-description">{product.description}</p>
             )}
-            
+
             <button className="add-to-cart-btn">
               <i className="fas fa-cart-plus"></i> Savatga qo'shish
             </button>
