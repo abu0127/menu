@@ -15,14 +15,14 @@ const ProductCard = ({ product, isOnSale }) => {
 
   return (
     <Animation>
-      <div className={`product-card ${!isOnSale ? 'out-of-stock' : ''}`}>
+      <div className={`product-card ${!isOnSale ?" out-of-stock" : ''}`}>
         <div className="product-image-container">
           <img
             src={product.image || "/images/default-product.png"}
             alt={product.name}
             className="product-image"
             onError={(e) => {
-              e.target.src = "/images/default-product.png";
+              // e.target.src = "/images/default-product.png";
             }}
           />
           {!isOnSale && <div className="out-of-stock-label">Mavjud emas</div>}

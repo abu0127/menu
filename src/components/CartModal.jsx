@@ -8,8 +8,17 @@ const CartModal = () => {
     removeFromCart, 
     updateQuantity, 
     toggleCart, 
-    cartTotal 
+    cartTotal,
+    itemCount,
+    clearCart
   } = useCart();
+
+  const formatPrice = (price) => {
+    return price?.toLocaleString('uz-UZ', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }) + ' so\'m';
+  };
 
   return (
     <AnimatePresence>
@@ -22,76 +31,103 @@ const CartModal = () => {
           transition={{ type: 'spring', damping: 12 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <button className="modal-close-btn" onClick={toggleCart}>
-            <i className="fa-solid fa-xmark"></i>
-          </button>
-
-          <h2 className="cart-title">Savat</h2>
+          <div className="modal-header">
+            <h2 className="cart-title">Savat <span>({itemCount} ta)</span></h2>
+            <button className="modal-close-btn" onClick={toggleCart}>
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
 
           {cartItems.length === 0 ? (
-            <p className="empty-cart">Savat bo'sh</p>
+            <div className="empty-cart-state">
+              <i className="fa-solid fa-cart-shopping"></i>
+              <p>Savat bo'sh</p>
+              <button className="continue-shopping" onClick={toggleCart}>
+                Xarid qilishni davom eting
+              </button>
+            </div>
           ) : (
             <>
-              <div className="cart-items">
-                {cartItems.map((item) => (
-                  <div key={item.id} className="cart-item">
-                    <div className="cart-item-image">
-                      <img 
-                        src={item.image || "/images/default-product.png"} 
-                        alt={item.name} 
-                      />
-                    </div>
-                    <div className="cart-item-details">
-                      <h3>{item.name}</h3>
-                      <div className="cart-item-price">
-                        {item.discount ? (
-                          <>
-                            <span className="discounted-price">
-                              {(
-                                item.originalPrice - 
-                                (item.originalPrice * item.discount / 100)
-                              ).toLocaleString()} so'm
-                            </span>
-                            <span className="original-price">
-                              {item.originalPrice.toLocaleString()} so'm
-                            </span>
-                          </>
-                        ) : (
-                          <span>{item.originalPrice.toLocaleString()} so'm</span>
-                        )}
+              <div className="cart-items-container">
+                <div className="cart-items">
+                  {cartItems.map((item) => (
+                    <div key={`${item.id}-${item.quantity}`} className="cart-item">
+                      <div className="cart-item-image">
+                        <img 
+                          src={item.image || "/images/default-product.png"} 
+                          alt={item.name}
+                          onError={(e) => {
+                            e.target.src = "/images/default-product.png";
+                          }}
+                        />
                       </div>
-                      <div className="cart-item-actions">
-                        <div className="quantity-control">
+                      <div className="cart-item-details">
+                        <h3>{item.name}</h3>
+                        <div className="cart-item-price">
+                          {item.discount ? (
+                            <>
+                              <span className="discounted-price">
+                                {formatPrice(item.price)}
+                              </span>
+                              <span className="original-price">
+                                {formatPrice(item.originalPrice)}
+                              </span>
+                              <span className="discount-badge">
+                                -{item.discount}%
+                              </span>
+                            </>
+                          ) : (
+                            <span>{formatPrice(item.price)}</span>
+                          )}
+                        </div>
+                        <div className="cart-item-actions">
+                          <div className="quantity-control">
+                            <button 
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              aria-label="Kamaytirish"
+                            >
+                              -
+                            </button>
+                            <span>{item.quantity}</span>
+                            <button 
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              aria-label="Ko'paytirish"
+                            >
+                              +
+                            </button>
+                          </div>
                           <button 
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            className="remove-btn"
+                            onClick={() => removeFromCart(item.id)}
+                            aria-label="O'chirish"
                           >
-                            -
-                          </button>
-                          <span>{item.quantity}</span>
-                          <button 
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          >
-                            +
+                            <i className="fa-solid fa-trash"></i>
                           </button>
                         </div>
-                        <button 
-                          className="remove-btn"
-                          onClick={() => removeFromCart(item.id)}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-              <div className="cart-total">
-                <span>Jami:</span>
-                <span>{cartTotal.toLocaleString()} so'm</span>
+
+              <div className="cart-summary">
+                <div className="cart-total">
+                  <span>Jami:</span>
+                  <span>{formatPrice(cartTotal)}</span>
+                </div>
+                
+                <div className="cart-buttons">
+                  <button 
+                    className="clear-cart-btn"
+                    onClick={clearCart}
+                  >
+                    <i className="fa-solid fa-trash"></i> Savatni tozalash
+                  </button>
+                  <button className="checkout-btn">
+                    <i className="fa-solid fa-credit-card"></i> Buyurtma berish
+                  </button>
+                </div>
               </div>
-              <button className="checkout-btn">
-                Buyurtma berish
-              </button>
             </>
           )}
         </motion.div>

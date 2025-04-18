@@ -9,14 +9,28 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(item => item.id === product.id);
+      
+      // Calculate final price considering discount
+      const finalPrice = product.discount
+        ? product.originalPrice - (product.originalPrice * product.discount / 100)
+        : product.originalPrice;
+
       if (existingItem) {
         return prevItems.map(item =>
-          item.id === product.id 
-            ? { ...item, quantity: item.quantity + 1 }
+          item.id === product.id
+            ? { 
+                ...item, 
+                quantity: item.quantity + 1,
+                price: finalPrice // Ensure consistent price
+              }
             : item
         );
       }
-      return [...prevItems, { ...product, quantity: 1 }];
+      return [...prevItems, { 
+        ...product, 
+        quantity: 1,
+        price: finalPrice // Store calculated price
+      }];
     });
   };
 
@@ -29,7 +43,7 @@ export const CartProvider = ({ children }) => {
     
     setCartItems((prevItems) =>
       prevItems.map(item =>
-        item.id === productId 
+        item.id === productId
           ? { ...item, quantity: newQuantity }
           : item
       )
@@ -40,6 +54,7 @@ export const CartProvider = ({ children }) => {
     setIsCartOpen(!isCartOpen);
   };
 
+  // Calculate total using the stored price
   const cartTotal = cartItems.reduce(
     (total, item) => total + (item.price * item.quantity),
     0

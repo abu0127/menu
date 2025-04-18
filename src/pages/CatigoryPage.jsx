@@ -7,19 +7,20 @@ import "../styles/products.css";
 const CategoryPage = () => {
   const category = useLoaderData();
   const [selectedProduct, setSelectedProduct] = useState(null);
-  
+
   return (
     <div className="category-container">
       <div className="products-grid">
         {category.items.map(item => (
-          <div 
-            key={item.id} 
+          <div
+            key={item.id}
             onClick={() => item.isOnSale && setSelectedProduct(item)}
           >
-            <ProductCard 
-              name={item.name} 
-              price={item.price} 
-              image={item.image} 
+            <ProductCard
+              product={item}
+              name={item.name}
+              price={item.price}
+              image={item.image}
               description={item.description}
               originalPrice={item.originalPrice}
               discount={item.discount}
@@ -28,12 +29,12 @@ const CategoryPage = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Modal oynasi */}
       {selectedProduct && (
-        <ProductModal 
-          product={selectedProduct} 
-          onClose={() => setSelectedProduct(null)} 
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
         />
       )}
     </div>
