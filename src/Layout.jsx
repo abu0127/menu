@@ -63,7 +63,11 @@ const Layout = () => {
                 <Animation>
                   <i className="fas fa-cart-plus"></i>
                 </Animation>
-                <span className="countProducts">{cartTotalQuantity}</span>
+                
+                  <span className={ cartTotalQuantity ? "countProducts" : 'hide'}>
+                    {cartTotalQuantity}
+                  </span>
+                
               </button>
             )}
           </header>

@@ -62,20 +62,25 @@ header .logo span {
 header .cart-plus{
     position: absolute;
     right: 5%;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     color: #E4EFC0;
     border: none;
     outline: none;
     background:linear-gradient(to right, #ff4141 0%, #d11500 100%);
 }
+header .cart-plus i{
+    font-size: 28px;
+}
 
 header .countProducts{
     position: absolute;
     left: 0;
+    bottom: -8px;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 50%;
+    width: 20px;
     padding: 2px;
     display: flex;
     align-items: center;
@@ -83,6 +88,7 @@ header .countProducts{
     background: rgb(54, 192, 0);
     
 }
+.hide{display: none;}
 
 .container {
     max-width: 556px;
