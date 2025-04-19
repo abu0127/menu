@@ -5,6 +5,7 @@
     text-decoration: none;
     list-style: none;
     user-select: none;
+    font-family: sans-serif;
 }
 
 
@@ -68,6 +69,19 @@ header .cart-plus{
     border: none;
     outline: none;
     background:linear-gradient(to right, #ff4141 0%, #d11500 100%);
+}
+
+header .countProducts{
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(54, 192, 0);
+    
 }
 
 .container {

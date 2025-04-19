@@ -13,22 +13,29 @@ function discountPrice(originalPrice, discount = 0) {
 const ProductCard = ({ product, isOnSale }) => {
   const { addToCart } = useCart();
 
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // Bu parent elementlarda boshqa click handlerlarni ishga tushirishni oldini oladi
+    if (isOnSale) {
+      addToCart(product);
+    }
+  };
+
   return (
     <Animation>
-      <div className={`product-card ${!isOnSale ?" out-of-stock" : ''}`}>
+      <div className={`product-card ${!isOnSale ? " out-of-stock" : ''}`}>
         <div className="product-image-container">
           <img
             src={product.image || "/images/default-product.png"}
             alt={product.name}
             className="product-image"
             onError={(e) => {
-              // e.target.src = "/images/default-product.png";
+              e.target.src = "/images/default-product.png";
             }}
           />
           {!isOnSale && <div className="out-of-stock-label">Mavjud emas</div>}
         </div>
         <div className="product-details">
-          <h3 className="product-title">{product.name}</h3>
+          <h3 className="product-name">{product.name}</h3>
           {product.description && (
             <p className="product-description">{product.description.substring(0, 60)}...</p>
           )}
@@ -42,9 +49,9 @@ const ProductCard = ({ product, isOnSale }) => {
               </span>
             </div>
             <button 
-              className={`add-to-cart-btn ${!isOnSale ? 'disabled' : ''}`} 
+              className={`product-card-add-to ${!isOnSale ? 'disabled' : ''}`} 
               disabled={!isOnSale}
-              onClick={() => isOnSale && addToCart(product)}
+              onClick={handleAddToCart}
             >
               <i className="fas fa-cart-plus"></i>
             </button>

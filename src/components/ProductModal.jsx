@@ -33,13 +33,11 @@ const ProductModal = ({ product, onClose }) => {
           initial={{ y: '100%' }}
           animate={{ y: 0 }}
           exit={{ y: '100%' }}
-          transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+          transition={{ type: 'spring', damping: 23, stiffness: 300 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="modal-header">
-            <button className="modal-back-btn" onClick={onClose}>
-              <i className="fa-solid fa-arrow-left"></i> Orqaga
-            </button>
+          <div className="product-modal-header">
+        
             <button className="modal-close-btn" onClick={onClose}>
               <i className="fa-solid fa-xmark"></i>
             </button>

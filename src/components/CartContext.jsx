@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
             ? { 
                 ...item, 
                 quantity: item.quantity + 1,
-                price: finalPrice // Ensure consistent price
+                price: finalPrice
               }
             : item
         );
@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
       return [...prevItems, { 
         ...product, 
         quantity: 1,
-        price: finalPrice // Store calculated price
+        price: finalPrice
       }];
     });
   };
@@ -60,6 +60,15 @@ export const CartProvider = ({ children }) => {
     0
   );
 
+  // Number of unique items in cart
+  const cartItemsCount = cartItems.length;
+
+  // Total quantity of all items in cart
+  const cartTotalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <CartContext.Provider
       value={{
@@ -70,6 +79,8 @@ export const CartProvider = ({ children }) => {
         isCartOpen,
         toggleCart,
         cartTotal,
+        cartItemsCount,
+        cartTotalQuantity,
       }}
     >
       {children}

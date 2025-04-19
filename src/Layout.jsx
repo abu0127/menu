@@ -4,6 +4,7 @@ import Loader from "./components/Loader";
 import Animation from "./components/Animation";
 import CartModal from "./components/CartModal"; // Create this component
 import { useCart } from "./components/CartContext";
+
 import './styles/layout.css';
 import "./styles/modal.css";
 
@@ -11,7 +12,8 @@ const Layout = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
-  const { toggleCart, isCartOpen } = useCart();
+  const { toggleCart, isCartOpen, cartTotalQuantity } = useCart();
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -61,6 +63,7 @@ const Layout = () => {
                 <Animation>
                   <i className="fas fa-cart-plus"></i>
                 </Animation>
+                <span className="countProducts">{cartTotalQuantity}</span>
               </button>
             )}
           </header>
