@@ -36,7 +36,9 @@ const Layout = () => {
   return (
     <div className="container">
       {loading ? (
+       <Animation>
         <Loader />
+</Animation>
       ) : (
         <>
           <header>
@@ -51,11 +53,11 @@ const Layout = () => {
               <Animation key={`logo-${localTitle}`}>
                 <span>Martian</span>
               </Animation>
-              <div className="location">
+              {/* <div className="location">
                 <Animation key={`location-${localTitle}`}>
                   {localTitle}
                 </Animation>
-              </div>
+              </div> */}
             </div>
 
             {location.pathname !== "/" && (
