@@ -33,34 +33,34 @@ const ProductCard = ({ product, isOnSale }) => {
             }}
           />
           {!isOnSale && <div className="out-of-stock-label">Mavjud emas</div>}
-
-          <div className="product-details">
-          <h3 className="product-name">{product.name}</h3>
-          {product.description && (
-            <p className="product-description">{product.description.substring(0, 60)}...</p>
-          )}
-          <div className="product-footer">
-            <div>
-              <span className={product.discount && isOnSale ? "originalPrice-hide" : 'product-price'}>
-                {product.originalPrice.toLocaleString()} so'm
-              </span>
-              <span className={product.discount && isOnSale ? "discount-price" : "discount-hide"}>
-                {discountPrice(product.originalPrice, product.discount).toLocaleString()} so'm
-              </span>
+          {isOnSale &&
+            <div className="product-details">
+              <h3 className="product-name">{product.name}</h3>
+              {product.description && (
+                <p className="product-description">{product.description.substring(0, 60)}...</p>
+              )}
+              <div className="product-footer">
+                <div>
+                  <span className={product.discount && isOnSale ? "originalPrice-hide" : 'product-price'}>
+                    {product.originalPrice.toLocaleString()} so'm
+                  </span>
+                  <span className={product.discount && isOnSale ? "discount-price" : "discount-hide"}>
+                    {discountPrice(product.originalPrice, product.discount).toLocaleString()} so'm
+                  </span>
+                </div>
+                <button
+                  className={`product-card-add-to ${!isOnSale ? 'disabled' : ''}`}
+                  disabled={!isOnSale}
+                  onClick={handleAddToCart}
+                >
+                  <i className="fas fa-cart-plus"></i>
+                </button>
+              </div>
             </div>
-            <button 
-              className={`product-card-add-to ${!isOnSale ? 'disabled' : ''}`} 
-              disabled={!isOnSale}
-              onClick={handleAddToCart}
-            >
-              <i className="fas fa-cart-plus"></i>
-            </button>
-          </div>
+          }
+
         </div>
 
-          
-        </div>
-      
       </div>
     </Animation>
   );

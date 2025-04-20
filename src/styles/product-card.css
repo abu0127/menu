@@ -14,6 +14,7 @@
   opacity: 0.7;
   background: #f5f5f5;
   pointer-events: none;
+
 }
 
 .product-card.out-of-stock .product-image {
@@ -29,9 +30,10 @@
   color: white;
   text-align: center;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 15px;
   font-weight: bold;
   z-index: 2;
+  backdrop-filter: blur(3px);
 }
 
 .add-to-cart-btn.disabled {
@@ -75,6 +77,7 @@
     bottom: 0;
     width: 100%;
     border-radius: 15px  15px 0 0;
+    border: 1px solid #7e7e7e64;
   }
   
   .product-name {
@@ -106,15 +109,16 @@
   }
   
   .product-price {
-    font-weight: 500;
-    color: #e63946;
-    
+    font-weight: 700;
+    color: #fefefe;
+    font-size: 15px;
     
   }
   .discount-price{
-    font-weight: 500;
+    font-weight: 700;
     color: #e63946;
-    
+    font-size: 15px;
+    color: #fefefe;
   }
   .discount-hide{
      opacity: 0;
@@ -122,8 +126,9 @@
   }
   .originalPrice-hide{
     font-weight: 500;
+    
     text-decoration: line-through;
-    color: #3333339f;
+    color: #5252529f;
   
   }
 
