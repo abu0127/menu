@@ -33,8 +33,8 @@ const ProductCard = ({ product, isOnSale }) => {
             }}
           />
           {!isOnSale && <div className="out-of-stock-label">Mavjud emas</div>}
-        </div>
-        <div className="product-details">
+
+          <div className="product-details">
           <h3 className="product-name">{product.name}</h3>
           {product.description && (
             <p className="product-description">{product.description.substring(0, 60)}...</p>
@@ -57,6 +57,10 @@ const ProductCard = ({ product, isOnSale }) => {
             </button>
           </div>
         </div>
+
+          
+        </div>
+      
       </div>
     </Animation>
   );

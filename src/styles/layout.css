@@ -65,13 +65,13 @@ header .cart-plus{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    color: #E4EFC0;
+    color: #ffffff;
     border: none;
     outline: none;
     background:linear-gradient(to right, #ff4141 0%, #d11500 100%);
 }
 header .cart-plus i{
-    font-size: 28px;
+    font-size: 29px;
 }
 
 header .countProducts{
