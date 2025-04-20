@@ -12,6 +12,7 @@ function discountPrice(originalPrice, discount = 0) {
 
 const ProductCard = ({ product, isOnSale }) => {
   const { addToCart } = useCart();
+  
 
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Bu parent elementlarda boshqa click handlerlarni ishga tushirishni oldini oladi

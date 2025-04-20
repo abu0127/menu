@@ -59,12 +59,12 @@ const Layout = () => {
             </div>
 
             {location.pathname !== "/" && (
-              <button className="cart-plus" onClick={toggleCart}>
+              <button className="cart-plus " onClick={toggleCart}>
                 <Animation>
                   <i className="fas fa-cart-plus"></i>
                 </Animation>
                 
-                  <span className={ cartTotalQuantity ? "countProducts" : 'hide'}>
+                  <span className={ cartTotalQuantity ? "countProducts " : 'hide'}>
                     {cartTotalQuantity}
                   </span>
                 
