@@ -50,13 +50,12 @@ const ProductCard = ({ product, isOnSale }) => {
           />
           {!isOnSale && <div className="out-of-stock-label">Mavjud emas</div>}
           {isOnSale &&
+
             <div className="product-details">
               <h3 className="product-name">{product.name}</h3>
-              {product.description && (
-                <p className="product-description">{product.description.substring(0, 60)}...</p>
-              )}
+              
               <div className="product-footer">
-                <div>
+                <div className="all-Price">
                   <span className={product.discount && isOnSale ? "originalPrice-hide" : 'product-price'}>
                     {product.originalPrice.toLocaleString()} so'm
                   </span>
