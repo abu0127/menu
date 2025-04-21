@@ -40,6 +40,7 @@ const ProductCard = ({ product, isOnSale }) => {
       <div className={`product-card ${!isOnSale ? " out-of-stock" : ''}`}>
         <div className="product-image-container">
           <img
+            loading="lazy"
             src={product.image || "/images/default-product.png"}
             alt={product.name}
             className="product-image"

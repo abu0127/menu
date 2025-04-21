@@ -8,13 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to  right bottom, #ff4141 0%, #d11500 100%);
-  animation: big .3s 1.7s ease-out forwards;
+  background: linear-gradient(to right bottom, #ff4141 0%, #d11500 100%);
+  animation: big .5s 1.5s ease-out forwards;
 }
 
 
 .loader {
-  animation: big .5s 1.7s ease-out forwards;
+  animation: big .5s 1.5s ease-out forwards;
   font-family: var(--logo-font);
   font-size: 50px;
   color: red;
@@ -48,11 +48,12 @@
 
 }
 
-@keyframes big{
-  0%{
+@keyframes big {
+  0% {
     font-size: 50px;
   }
-  100%{
+
+  100% {
     font-size: 500px;
     opacity: 0;
   }

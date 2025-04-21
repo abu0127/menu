@@ -18,6 +18,7 @@ const Home = () => {
                 {/* Kategoriya rasmi */}
                 <div className="category-title">{cat.category}</div>
                 <img 
+                  loading="lazy"
                   src={cat.image} 
                   alt={cat.category} 
                   className="category-image"

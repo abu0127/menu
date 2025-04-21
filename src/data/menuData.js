@@ -30,6 +30,39 @@ export const menu = [
         image: "../images/redbul.jpg",
         isOnSale: false,
       }
+      ,
+      {
+        id: 3,
+        name: "Red Bull",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/redbul.jpg",
+        isOnSale: false,
+      },
+      {
+        id: 3,
+        name: "Red Bull",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/redbul.jpg",
+        isOnSale: false,
+      },
+      {
+        id: 3,
+        name: "Red Bull",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/redbul.jpg",
+        isOnSale: false,
+      },
+      {
+        id: 3,
+        name: "Red Bull",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/redbul.jpg",
+        isOnSale: false,
+      }
     ]
   },
   {

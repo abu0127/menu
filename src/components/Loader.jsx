@@ -2,9 +2,9 @@
 import React from "react";
 import "../styles/loader.css";
 
-const Loader = () => {
+const Loader = ({loading}) => {
     return (
-        <div className="loader_wrapper">
+        <div className={ "loader_wrapper"} >
             <span className="loader">
                 Martian
             </span>
