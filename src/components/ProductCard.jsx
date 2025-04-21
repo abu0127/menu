@@ -57,10 +57,10 @@ const ProductCard = ({ product, isOnSale }) => {
               <div className="product-footer">
                 <div className="all-Price">
                   <span className={product.discount && isOnSale ? "originalPrice-hide" : 'product-price'}>
-                    {product.originalPrice.toLocaleString()} so'm
+                    {product.originalPrice.toLocaleString()} <span> so'm</span>
                   </span>
                   <span className={product.discount && isOnSale ? "discount-price" : "discount-hide"}>
-                    {discountPrice(product.originalPrice, product.discount).toLocaleString()} so'm
+                    {discountPrice(product.originalPrice, product.discount).toLocaleString()}<span> so'm</span>
                   </span>
                 </div>
                 <motion.button

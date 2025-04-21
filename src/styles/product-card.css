@@ -112,6 +112,9 @@
     font-size: var(--txt-size);
     
   }
+  .product-price span, .discount-price span{
+    font-size: 12px;
+  }
   .discount-price{
     font-family: var(--txt-famely);
     font-weight: 500;

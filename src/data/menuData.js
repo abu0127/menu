@@ -31,60 +31,7 @@ export const menu = [
         isOnSale: false,
       }
       ,
-      {
-        id: 3,
-        name: "Red Bull",
-        originalPrice: 20000,
-        discount: 0,
-        image: "../images/redbul.jpg",
-        isOnSale: false,
-      },
-      {
-        id: 3,
-        name: "Red Bull",
-        originalPrice: 20000,
-        discount: 0,
-        image: "../images/redbul.jpg",
-        isOnSale: false,
-      },
-      {
-        id: 3,
-        name: "Red Bull",
-        originalPrice: 20000,
-        discount: 0,
-        image: "../images/redbul.jpg",
-        isOnSale: false,
-      },
-      {
-        id: 3,
-        name: "Red Bull",
-        originalPrice: 20000,
-        discount: 0,
-        image: "../images/redbul.jpg",
-        isOnSale: false,
-      }
-    ]
-  },
-  {
-    category: "Shirinliklar",
-    image: cake,
-    items: [
-      {
-        id: 4,
-        name: "Medovik",
-        originalPrice: 30000,
-        discount: 17,
-        image: "/images/medovik.png",
-        isOnSale: true
-      },
-      {
-        id: 5,
-        name: "Sansibastan",
-        originalPrice: 35000,
-        discount: 14,
-        image: "/images/cheesecake.png",
-        isOnSale: true
-      },
+     
       
     ]
   }
