@@ -36,9 +36,9 @@ const Layout = () => {
   return (
     <div className="container">
       {loading ? (
-       <Animation>
-        <Loader />
-</Animation>
+        <Animation>
+          <Loader />
+        </Animation>
       ) : (
         <>
           <header>
@@ -51,6 +51,9 @@ const Layout = () => {
             )}
             <div className="logo">
               <Animation key={`logo-${localTitle}`}>
+                <div className="blurLight"></div>
+                <div className="blurLight"></div>
+                <div className="blurLight"></div>
                 <span>Martian</span>
               </Animation>
               {/* <div className="location">
@@ -65,11 +68,11 @@ const Layout = () => {
                 <Animation>
                   <i className="fas fa-cart-plus"></i>
                 </Animation>
-                
-                  <span className={ cartTotalQuantity ? "countProducts " : 'hide'}>
-                    {cartTotalQuantity}
-                  </span>
-                
+
+                <span className={cartTotalQuantity ? "countProducts " : 'hide'}>
+                  {cartTotalQuantity}
+                </span>
+
               </button>
             )}
           </header>

@@ -1,7 +1,7 @@
 .category-container{
     height: 100%;
     overflow-y: scroll;
-    
+    padding-top: 5%;
 }
 
 .products-grid {

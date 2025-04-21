@@ -18,7 +18,8 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 100;
-    background: #d4d4d4;
+    background: rgb(235, 235, 235);
+    overflow: hidden;
 
 }
 
@@ -34,7 +35,7 @@ header .location {
 header .back {
     position: absolute;
     left: 5%;
-    background: #E4EFC0;
+    background: #c9c9c9;
     background: linear-gradient(to right, #ff4141 0%, #d11500 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -43,9 +44,48 @@ header .back {
 }
 
 header .logo {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+header .logo .blurLight{
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+header .logo div:nth-child(2){
+    
+    left: 85px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 50px 25px rgb(0, 153, 255) ;
+    
+}
+header .logo div:nth-child(3){
+    left: 6px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 50px 25px rgb(212, 0, 255) ;
+    animation: light 2 infinite;
+}
+@keyframes light{
+    10%{
+        box-shadow: 0 0 55px 35px rgba(212, 0, 255, 0.74)
+    }
+    30%{
+        box-shadow: 0 0 35px 15px rgba(214, 11, 255, 0.912)
+    }
+    70%{
+        box-shadow: 0 0 65px 45px rgba(255, 0, 208, 0.74)
+        
+    }
+    100%{
+        box-shadow: 0 0 55px 35px rgba(212, 0, 255, 0.74)
+    }
 }
 
 header .logo span {
