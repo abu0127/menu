@@ -1,6 +1,9 @@
 import Animation from "./Animation";
 import { useCart } from "./CartContext";
 import "../styles/product-card.css";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import audio from '../../public/toy-button.mp3'
 
 function discountPrice(originalPrice, discount = 0) {
   if (discount > 0) {
@@ -12,13 +15,24 @@ function discountPrice(originalPrice, discount = 0) {
 
 const ProductCard = ({ product, isOnSale }) => {
   const { addToCart } = useCart();
-  
+  const audioRef = useRef(null); 
+
 
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Bu parent elementlarda boshqa click handlerlarni ishga tushirishni oldini oladi
     if (isOnSale) {
       addToCart(product);
     }
+   
+   if(audioRef.current === null){
+     audioRef.current = new Audio(audio);
+   }
+   const sound = audioRef.current;
+   sound.currentTime = 0;
+   sound.play()
+     .catch(err => console.log("savar tugmasi bosilishidagi xatolik", err))
+
+
   };
 
   return (
@@ -49,13 +63,18 @@ const ProductCard = ({ product, isOnSale }) => {
                     {discountPrice(product.originalPrice, product.discount).toLocaleString()} so'm
                   </span>
                 </div>
-                <button
+                <motion.button
                   className={`product-card-add-to ${!isOnSale ? 'disabled' : ''}`}
                   disabled={!isOnSale}
                   onClick={handleAddToCart}
+                  whileTap={{
+                    scale: (2.5,2.5),
+                    // x: [0, 0, -10, 0, -10, 0], // Titrash animatsiyasi
+                    transition: { duration: 0.5 }
+                  }}
                 >
                   <i className="fas fa-cart-plus"></i>
-                </button>
+                </motion.button>
               </div>
             </div>
           }

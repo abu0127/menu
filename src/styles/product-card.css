@@ -63,7 +63,7 @@
   }
   
   .product-card:hover .product-image {
-    transform: scale(1.5,1.5);
+    transform: scale(1.1);
   }
   
   .product-details {
@@ -150,11 +150,11 @@
     font-size: 23px;
   }
   
-  .product-card-add-to:hover {
+  /* .product-card-add-to:hover {
     background: #3e8e41;
     transition: all .7;
     
-  }
+  } */
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
