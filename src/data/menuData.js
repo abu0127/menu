@@ -11,7 +11,7 @@ export const menu = [
         name: "Coca-Cola",
         originalPrice: 15000, // Original price before discount
         discount: 0, //  discount
-        image: "../images/cola-1.5.svg",
+        image: "../images/cola-450.png",
         isOnSale: true // Flag to indicate item is on sale
       },
       {
