@@ -54,7 +54,7 @@ const Layout = () => {
                 <div className="blurLight"></div>
                 <div className="blurLight"></div>
                 <div className="blurLight"></div>
-                <span>Martian</span>
+                <span className="theLogo">Martian</span>
               </Animation>
               {/* <div className="location">
                 <Animation key={`location-${localTitle}`}>

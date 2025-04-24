@@ -72,6 +72,9 @@ header .logo div:nth-child(3){
     box-shadow: 0 0 50px 25px rgb(212, 0, 255) ;
     animation: light 2 infinite;
 }
+header .theLogo{
+    padding: 10px;
+}
 @keyframes light{
     10%{
         box-shadow: 0 0 55px 35px rgba(212, 0, 255, 0.74)

@@ -11,20 +11,54 @@ export const menu = [
         name: "Coca-Cola",
         originalPrice: 15000, // Original price before discount
         discount: 0, //  discount
-        image: "../images/cocacola.jpg",
+        image: "../images/cola-1.5.svg",
         isOnSale: true // Flag to indicate item is on sale
       },
       {
         id: 2,
         name: "Pepsi",
         originalPrice: 13000,
-        discount: 28,
+        discount: 10,
         image: "../images/pepsi.jpg",
         isOnSale: true
       },
       {
         id: 3,
         name: "Red Bull",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/redbul.jpg",
+        isOnSale: false,
+      }
+      ,
+     
+      
+    ]
+  }
+  ,
+  {
+    category: "Sirinliklar",
+    image: cake,
+    items: [
+      {
+        id: 1,
+        name: "Napalion",
+        originalPrice: 25000, // Original price before discount
+        discount: 0, //  discount
+        image: "../images/cocacola.jpg",
+        isOnSale: true // Flag to indicate item is on sale
+      },
+      {
+        id: 2,
+        name: "Sansibastian",
+        originalPrice: 30000,
+        discount: 10,
+        image: "../images/pepsi.jpg",
+        isOnSale: true
+      },
+      {
+        id: 3,
+        name: "Midavik",
         originalPrice: 20000,
         discount: 0,
         image: "../images/redbul.jpg",
