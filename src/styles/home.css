@@ -12,12 +12,6 @@
  .category-link{
    
 }
-.category-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;  /* Rasm proporsiyasini saqlaydi */
-    z-index: 1;
-  }
   /* home.css */
 .category-card {
     position: relative; /* Rasm va matnni nisbiy joylashtirish */
@@ -31,10 +25,10 @@
   }
   
   .category-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Rasm proporsiyasini saqlab qoladi */
+    
+    background-size: cover; /* Rasm proporsiyasini saqlab qoladi */
     z-index: 1;
+    
   }
   .category-title{
     position: absolute;
