@@ -4,18 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2%;
-    padding-top: 5%;
+    gap: 1%;
+    padding: 2% 0;
     overflow: scroll;
+    background-color: blue;
 }
  .category-link{
-    display: block;
-    border-radius: 15px;
-    width: 300px;
-    height:30vh;
-    overflow: hidden;
-    z-index: 2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
+   
 }
 .category-image {
     width: 100%;
@@ -26,10 +21,12 @@
   /* home.css */
 .category-card {
     position: relative; /* Rasm va matnni nisbiy joylashtirish */
-    border-radius: 12px;
     overflow: hidden;
-    
-    height: 200px; /* Belgilangan balandlik */
+    display: block;
+    border-radius: 15px;
+    width: 300px;
+    height:29vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
     z-index: 2;
   }
   
