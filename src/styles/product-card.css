@@ -164,7 +164,7 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .product-details {
-      padding: 3px 5px 5px 15px;
+      padding: 5px 5px 5px 15px;
     }
     
     .product-title {
