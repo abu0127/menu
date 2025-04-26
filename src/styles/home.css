@@ -1,5 +1,5 @@
 .category-list{
-    width: 100%;
+    width: 100vw;
     height: 90dvh;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
  .category-link{
     display: block;
     border-radius: 10px;
-    width: 98vw;
+    width: 98%;
     height: 28vh;
     overflow: hidden;
     z-index: 2;

@@ -15,7 +15,7 @@ function discountPrice(originalPrice, discount = 0) {
 
 const ProductCard = ({ product, isOnSale }) => {
   const { addToCart } = useCart();
-  const audioRef = useRef(null); 
+  const audioRef = useRef(null);
 
 
   const handleAddToCart = (e) => {
@@ -23,14 +23,14 @@ const ProductCard = ({ product, isOnSale }) => {
     if (isOnSale) {
       addToCart(product);
     }
-   
-   if(audioRef.current === null){
-     audioRef.current = new Audio(audio);
-   }
-   const sound = audioRef.current;
-   sound.currentTime = 0;
-   sound.play()
-     .catch(err => console.log("savar tugmasi bosilishidagi xatolik", err))
+
+    if (audioRef.current === null) {
+      audioRef.current = new Audio(audio);
+    }
+    const sound = audioRef.current;
+    sound.currentTime = 0;
+    sound.play()
+      .catch(err => console.log("savar tugmasi bosilishidagi xatolik", err))
 
 
   };
@@ -52,8 +52,12 @@ const ProductCard = ({ product, isOnSale }) => {
           {isOnSale &&
 
             <div className="product-details">
-              <h3 className="product-name">{product.name}</h3>
-              
+              <div className="product-name">
+                <h3>{product.name}</h3>
+                <h5> {product.size}</h5>
+              </div>
+
+
               <div className="product-footer">
                 <div className="all-Price">
                   <span className={product.discount && isOnSale ? "originalPrice-hide" : 'product-price'}>
@@ -68,7 +72,7 @@ const ProductCard = ({ product, isOnSale }) => {
                   disabled={!isOnSale}
                   onClick={handleAddToCart}
                   whileTap={{
-                    scale: (2.5,2.5),
+                    scale: (2.5, 2.5),
                     // x: [0, 0, -10, 0, -10, 0], // Titrash animatsiyasi
                     transition: { duration: 0.5 }
                   }}

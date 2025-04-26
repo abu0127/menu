@@ -81,9 +81,9 @@ const Layout = () => {
             <Outlet />
           </main>
 
-          <footer>
+          {/* <footer>
             &copy; {new Date().getFullYear()} | My Menu App
-          </footer>
+          </footer> */}
 
           {isCartOpen && <CartModal />}
         </>
