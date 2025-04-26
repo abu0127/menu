@@ -11,10 +11,10 @@
 .category-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 100px; /* oxirgi category uchun joy */
+  padding-bottom: 150px; /* oxirgi category uchun joy */
 }
 
 /* Kategoriya karta stilizatsiyasi */
