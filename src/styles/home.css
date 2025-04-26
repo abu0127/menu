@@ -23,12 +23,14 @@
   height: 300px; 
   overflow: hidden;
   position: relative;
+  
 }
 /* Rasm */
 .category-image {
   width: 100%;
    height: 250px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 /* Title */
