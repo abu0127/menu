@@ -74,6 +74,7 @@
     bottom: 0;
     width: 100%;
     border-radius: 15px  15px 0 0;
+    padding: 5px 5px 5px 15px;
     justify-content: space-between;
   }
   
@@ -161,16 +162,3 @@
     
   } */
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .product-details {
-      padding: 5px 5px 5px 15px;
-    }
-    
-    .product-title {
-  
-      font-weight: 900;
-    }
-    
-   
-  }
