@@ -60,6 +60,24 @@ export const menu = [
         image: "../images/mojitto.PNG",
         isOnSale: true
       },
+      {
+        id: 5,
+        name: "Red Bull",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/redbul.jpg",
+        isOnSale: false,
+      }
+      ,
+      {
+        id: 6,
+        name: "Mojitto",
+        size: '500ml' ,
+        originalPrice: 10000,
+        discount: 10,
+        image: "../images/mojitto.PNG",
+        isOnSale: true
+      },
      
       
     ]
