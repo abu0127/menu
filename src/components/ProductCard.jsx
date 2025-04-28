@@ -73,7 +73,7 @@ const ProductCard = ({ product, isOnSale }) => {
                   onClick={handleAddToCart}
                   whileTap={{
                     scale: (2.5, 2.5),
-                    // x: [0, 0, -10, 0, -10, 0], // Titrash animatsiyasi
+                   
                     transition: { duration: 0.5 }
                   }}
                 >
