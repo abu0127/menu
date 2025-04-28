@@ -113,7 +113,33 @@ export const menu = [
         isOnSale: true,
       }
       ,
-     
+      {
+        id: 3,
+        name: "Vafli",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/vafli.PNG",
+        isOnSale: false,
+      }
+      ,
+      {
+        id: 4,
+        name: "Vafli",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/vafli.PNG",
+        isOnSale: false,
+      }
+      ,
+      {
+        id: 5,
+        name: "Vafli",
+        originalPrice: 20000,
+        discount: 0,
+        image: "../images/vafli.PNG",
+        isOnSale: false,
+      }
+      ,
       
     ]
   }
