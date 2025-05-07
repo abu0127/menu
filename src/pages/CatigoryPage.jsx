@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useSearchParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import ProductCardLoader from "../components/ProductCardLoader"; // Yangi loader komponenti
 import ProductModal from "../components/ProductModal";
@@ -9,6 +9,8 @@ const CategoryPage = () => {
   const category = useLoaderData();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchParams] = useSearchParams();
+  const tableNumber = searchParams.get("table");
 
   useEffect(() => {
     // Ma'lumotlar yuklanganligini simulyatsiya qilish

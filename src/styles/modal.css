@@ -274,3 +274,101 @@
     max-height: 90vh;
   }
 }
+
+/* Table number styles */
+.table-number-input-container {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.table-number-input-container label {
+  font-weight: 600;
+  color: #333;
+}
+
+.table-number-input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.confirm-table-btn {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirm-table-btn:hover {
+  background-color: #218838;
+}
+
+.table-number-display {
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change-table-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.change-table-btn:hover {
+  text-decoration: underline;
+}
+/* Validation styles */
+.validation-error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.validation-error i {
+  font-size: 12px;
+}
+
+.input-error {
+  border-color: #dc3545 !important;
+}
+
+.input-error:focus {
+  outline-color: #dc3545;
+}
+
+.confirm-table-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Input number arrows hide */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -13,7 +13,7 @@ const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { toggleCart, isCartOpen, cartTotalQuantity } = useCart();
-
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {

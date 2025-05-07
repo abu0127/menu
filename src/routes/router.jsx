@@ -5,8 +5,12 @@ import CategoryPage from "../pages/CatigoryPage";
 import ErrorPage from "../pages/ErrorPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import { menu } from "../data/menuData";
+import { useSearchParams } from "react-router-dom"; 
 
 const categoryLoader = async ({ params }) => {
+
+
+
   if (!params?.categoryName) {
     throw new Response("Bad Request", { status: 400 });
   }

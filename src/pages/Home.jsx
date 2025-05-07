@@ -1,12 +1,19 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { menu } from "../data/menuData";
 import CategoryCardLoader from "../components/CategoryCardLoader"; // loader komponent
 import "../styles/home.css";
 
+
 const Home = () => {
   const [loadedImages, setLoadedImages] = useState({});
+  const [searchParams] = useSearchParams();
+  const tableNumber = searchParams.get("table"); // Stol raqamini olish
+  
+  if (tableNumber){
+     console.log(tableNumber)
+  }
 
   const handleImageLoad = (category) => {
     setLoadedImages((prev) => ({
