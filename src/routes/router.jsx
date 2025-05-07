@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
   }
 ],
 {
-  basename:"/menu"
+   basename: process.env.NODE_ENV === 'production' ? '/repo-name/menu' : '/menu'
 }
 
 );
