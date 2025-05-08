@@ -7,7 +7,7 @@ export const menu = [
     image: drinks,
     items: [
       {
-        id: 1,
+        id: "drink-1",
         name: "Coca-Cola",
         size: '500ml' ,
         originalPrice: 10000, // Original price before discount
@@ -16,7 +16,7 @@ export const menu = [
         isOnSale: true // Flag to indicate item is on sale
       },
       {
-        id: 2,
+        id: "drink-2",
         name: "Pepsi",
         size: '500ml' ,
         originalPrice: 10000,
@@ -25,7 +25,7 @@ export const menu = [
         isOnSale: true
       },
       {
-        id: 3,
+        id: "drink-3",
         name: "Fanta",
         size: '500ml' ,
         originalPrice: 10000,
@@ -34,7 +34,7 @@ export const menu = [
         isOnSale: true
       },
       {
-        id: 4,
+        id: "drink-4",
         name: "Sprite",
         size: '500ml' ,
         originalPrice: 10000,
@@ -43,7 +43,7 @@ export const menu = [
         isOnSale: true
       },
       {
-        id: 5,
+        id:"drink-6",
         name: "Red Bull",
         originalPrice: 20000,
         discount: 0,
@@ -52,7 +52,7 @@ export const menu = [
       }
       ,
       {
-        id: 6,
+        id: "drink-7",
         name: "Moxitto",
         size: '450ml' ,
         originalPrice: 10000,
@@ -61,7 +61,7 @@ export const menu = [
         isOnSale: true
       },
       {
-        id: 5,
+        id: "drink-8",
         name: "Koktel",
         size: '450ml' ,
         originalPrice: 20000,
@@ -71,7 +71,7 @@ export const menu = [
       }
       ,
       {
-        id: 6,
+        id: "drink-9",
         name: "Mojitto",
         size: '500ml' ,
         originalPrice: 10000,

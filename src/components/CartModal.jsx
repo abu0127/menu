@@ -1,23 +1,66 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from './CartContext';
+import { useLocation } from 'react-router-dom';
 import '../styles/modal.css';
 
 const CartModal = () => {
-  const { 
-    cartItems, 
-    removeFromCart, 
-    updateQuantity, 
-    toggleCart, 
+  const {
+    cartItems,
+    removeFromCart,
+    updateQuantity,
+    toggleCart,
     cartTotal,
     itemCount,
     clearCart
   } = useCart();
+
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const tableNumber = params.get('table');
 
   const formatPrice = (price) => {
     return price?.toLocaleString('uz-UZ', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     }) + ' so\'m';
+  };
+
+  const handleSubmit = async () => {
+    if (!tableNumber) {
+      alert("Stol raqami topilmadi. Buyurtma yuborilmadi.");
+      return;
+    }
+
+    const buyer = {
+      tableNumber,
+      total: cartTotal,
+      items: cartItems.map(item => ({
+        id: item.id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price
+      }))
+    };
+
+    try {
+      const response = await fetch('https://your-backend-api.com/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(buyer)
+      });
+
+      if (!response.ok) {
+        throw new Error('Buyurtma yuborishda xatolik yuz berdi');
+      }
+
+      alert("Buyurtma muvaffaqiyatli yuborildi!");
+      clearCart();
+      toggleCart();
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
@@ -123,7 +166,7 @@ const CartModal = () => {
                   >
                     <i className="fa-solid fa-trash"></i> Savatni tozalash
                   </button>
-                  <button className="checkout-btn">
+                  <button className="checkout-btn" onClick={handleSubmit}>
                     <i className="fa-solid fa-credit-card"></i> Buyurtma berish
                   </button>
                 </div>
