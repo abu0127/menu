@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { useCart } from './CartContext';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import '../styles/modal.css';
@@ -13,14 +14,13 @@ const CartModal = () => {
     toggleCart,
     cartTotal,
     itemCount,
-    clearCart
+    clearCart,
+    tableNumber
   } = useCart();
 
   
-  const [searchParams] = useSearchParams();
-  const tableNumber = searchParams.get("table");
-
-
+  
+  console.log("Stol raqami:", tableNumber);
 
   const formatPrice = (price) => {
     return price?.toLocaleString('uz-UZ', {

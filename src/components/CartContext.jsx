@@ -1,10 +1,24 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [tableNumber, setTableNumber] = useState(null);
+
+  // 🟡 URL'dan table number olish (hashdan)
+  useEffect(() => {
+    const hash = window.location.hash;
+    const queryString = hash.split('?')[1];
+    if (queryString) {
+      const params = new URLSearchParams(queryString);
+      const table = params.get('table');
+      if (table) {
+        setTableNumber(table);
+      }
+    }
+  }, []);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -54,7 +68,6 @@ export const CartProvider = ({ children }) => {
     setIsCartOpen(!isCartOpen);
   };
 
-  // ✅ CLEAR CART FUNCTION
   const clearCart = () => {
     setCartItems([]);
   };
@@ -78,12 +91,14 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
-        clearCart,         // <--- Export qilinmoqda
+        clearCart,
         isCartOpen,
         toggleCart,
         cartTotal,
         cartItemsCount,
         cartTotalQuantity,
+        tableNumber,       // ← Bu yerda context ichiga qo‘shildi
+        setTableNumber     // ← Agar kerak bo‘lsa, o‘zgartirish uchun
       }}
     >
       {children}
