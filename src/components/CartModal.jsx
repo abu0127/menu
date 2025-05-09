@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from './CartContext';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import '../styles/modal.css';
 
 const API = import.meta.env.VITE_POST_ORDERS;
@@ -16,11 +16,11 @@ const CartModal = () => {
     clearCart
   } = useCart();
 
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const tableNumber = 1
+  
+  const [searchParams] = useSearchParams();
+  const tableNumber = searchParams.get("table");
 
-// params.get('table');
+
 
   const formatPrice = (price) => {
     return price?.toLocaleString('uz-UZ', {
