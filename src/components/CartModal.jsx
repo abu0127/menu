@@ -3,6 +3,8 @@ import { useCart } from './CartContext';
 import { useLocation } from 'react-router-dom';
 import '../styles/modal.css';
 
+const API = import.meta.env.VITE_POST_ORDERS;
+
 const CartModal = () => {
   const {
     cartItems,
@@ -16,7 +18,9 @@ const CartModal = () => {
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const tableNumber = params.get('table');
+  const tableNumber = 1
+
+// params.get('table');
 
   const formatPrice = (price) => {
     return price?.toLocaleString('uz-UZ', {
@@ -43,7 +47,8 @@ const CartModal = () => {
     };
 
     try {
-      const response = await fetch('https://your-backend-api.com/orders', {
+      const response = await fetch(`${API}/orders`
+        , {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -52,10 +57,10 @@ const CartModal = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Buyurtma yuborishda xatolik yuz berdi');
+        throw new Error('Buyurtma yuborishda xatolik yuz berdi ❌');
       }
 
-      alert("Buyurtma muvaffaqiyatli yuborildi!");
+      alert("Buyurtma muvaffaqiyatli yuborildi ✅");
       clearCart();
       toggleCart();
     } catch (error) {

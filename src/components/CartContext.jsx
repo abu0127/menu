@@ -9,8 +9,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(item => item.id === product.id);
-      
-      // Calculate final price considering discount
+
       const finalPrice = product.discount
         ? product.originalPrice - (product.originalPrice * product.discount / 100)
         : product.originalPrice;
@@ -18,16 +17,17 @@ export const CartProvider = ({ children }) => {
       if (existingItem) {
         return prevItems.map(item =>
           item.id === product.id
-            ? { 
-                ...item, 
+            ? {
+                ...item,
                 quantity: item.quantity + 1,
                 price: finalPrice
               }
             : item
         );
       }
-      return [...prevItems, { 
-        ...product, 
+
+      return [...prevItems, {
+        ...product,
         quantity: 1,
         price: finalPrice
       }];
@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
 
   const updateQuantity = (productId, newQuantity) => {
     if (newQuantity < 1) return;
-    
+
     setCartItems((prevItems) =>
       prevItems.map(item =>
         item.id === productId
@@ -54,16 +54,18 @@ export const CartProvider = ({ children }) => {
     setIsCartOpen(!isCartOpen);
   };
 
-  // Calculate total using the stored price
+  // ✅ CLEAR CART FUNCTION
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const cartTotal = cartItems.reduce(
     (total, item) => total + (item.price * item.quantity),
     0
   );
 
-  // Number of unique items in cart
   const cartItemsCount = cartItems.length;
 
-  // Total quantity of all items in cart
   const cartTotalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -76,6 +78,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,         // <--- Export qilinmoqda
         isCartOpen,
         toggleCart,
         cartTotal,
