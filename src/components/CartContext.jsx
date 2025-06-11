@@ -5,7 +5,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [tableNumber, setTableNumber] = useState(null);
+  const [tableNumber, setTableNumber] = useState(1);
 
   // 🟡 URL'dan table number olish (hashdan)
   useEffect(() => {
