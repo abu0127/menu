@@ -81,6 +81,9 @@ const ProductModal = ({ product, onClose }) => {
             </table>
           </div>
 
+
+
+
           </div>
         </motion.div>
       </div>
