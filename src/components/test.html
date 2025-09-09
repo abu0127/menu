@@ -1,0 +1,19 @@
+  {/* Sizes Table */}
+          <div className="sizes-table-wrapper">
+            <table className="sizes-table">
+              <thead>
+                <tr>
+                  <th>Hajm</th>
+                  <th>Narx</th>
+                </tr>
+              </thead>
+              <tbody>
+                {product.sizes.map((size) => (
+                  <tr key={size.label}>
+                    <td>{size.label}</td>
+                    <td>{size.price.toLocaleString()} so'm</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>

@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+    font-family: sans-serif;
+}
+
+
+header {
+    width: 100%;
+    height: 8vh;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.295);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: rgb(235, 235, 235);
+    overflow: hidden;
+
+}
+
+header .location {
+
+    font-size: 14px;
+    font-family: var(--title-font);
+    font-style: italic;
+    opacity: 65%;
+    ;
+}
+
+header .back {
+    position: absolute;
+    left: 5%;
+    background: #c9c9c9;
+    background: linear-gradient(to right, #ff4141 0%, #d11500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+
+}
+
+header .logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header .logo .blurLight{
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+header .logo div:nth-child(2){
+    
+    left: 85px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 50px 25px rgb(0, 153, 255) ;
+    
+}
+header .logo div:nth-child(3){
+    left: 6px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 50px 25px rgb(212, 0, 255) ;
+    animation: light 2 infinite;
+}
+header .theLogo{
+    padding: 10px;
+}
+@keyframes light{
+    10%{
+        box-shadow: 0 0 55px 35px rgba(212, 0, 255, 0.74)
+    }
+    30%{
+        box-shadow: 0 0 35px 15px rgba(214, 11, 255, 0.912)
+    }
+    70%{
+        box-shadow: 0 0 65px 45px rgba(255, 0, 208, 0.74)
+        
+    }
+    100%{
+        box-shadow: 0 0 55px 35px rgba(212, 0, 255, 0.74)
+    }
+}
+
+header .logo span {
+
+    position: relative;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-family: var(--logo-font);
+    color: red;
+    text-shadow:
+    rgb(255, 255, 255) 4px 0px 0px,
+    rgb(255, 255, 255) 3.87565px 0.989616px 0px,
+    rgb(255, 255, 255) 3.51033px 1.9177px 0px,
+    rgb(255, 255, 255) 2.92676px 2.72656px 0px,
+    rgb(255, 255, 255) 2.16121px 3.36588px 0px,
+    rgb(255, 255, 255) 1.26129px 3.79594px 0px,
+    rgb(255, 255, 255) 0.282949px 3.98998px 0px,
+    rgb(255, 255, 255) -0.712984px 3.93594px 0px,
+    rgb(255, 255, 255) -1.66459px 3.63719px 0px,
+    rgb(255, 255, 255) -2.51269px 3.11229px 0px,
+    rgb(255, 255, 255) -3.20457px 2.39389px 0px,
+    rgb(255, 255, 255) -3.69721px 1.52664px 0px,
+    rgb(255, 255, 255) -3.95997px 0.56448px 0px,
+    rgb(255, 255, 255) -3.97652px -0.432781px 0px,
+    rgb(255, 255, 255) -3.74583px -1.40313px 0px,
+    rgb(255, 255, 255) -3.28224px -2.28625px 0px,
+    rgb(255, 255, 255) -2.61457px -3.02721px 0px,
+    rgb(255, 255, 255) -1.78435px -3.57996px 0px,
+    rgb(255, 255, 255) -0.843183px -3.91012px 0px,
+    rgb(255, 255, 255) 0.150409px -3.99717px 0px,
+    rgb(255, 255, 255) 1.13465px -3.8357px 0px,
+    rgb(255, 255, 255) 2.04834px -3.43574px 0px,
+    rgb(255, 255, 255) 2.83468px -2.82216px 0px,
+    rgb(255, 255, 255) 3.44477px -2.03312px 0px,
+    rgb(255, 255, 255) 3.84068px -1.11766px 0px,
+    rgb(255, 255, 255) 3.9978px -0.132717px 0px;
+
+}
+
+header .cart-plus {
+    position: absolute;
+    right: 5%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #ff4141 0%, #d11500 100%);
+}
+
+
+
+
+header .cart-plus i {
+    font-size: 29px;
+}
+
+header .countProducts {
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(54, 192, 0);
+
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    max-width: 556px;
+    height: 100lvh;
+    background-color: rgb(235, 235, 235);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+main {
+
+    width: 100%;
+    height: 97vh;
+
+
+
+}

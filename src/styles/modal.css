@@ -1,0 +1,379 @@
+/* modal.css */
+
+/* Asosiy modal stil */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background-color: white;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.cart-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Modal sarlavha va yopish tugmasi */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.cart-title span {
+  font-size: 1rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 5px;
+}
+
+/* Savat bo'sh holati */
+.empty-cart {
+  text-align: center;
+  color: #666;
+  padding: 40px 0;
+}
+
+.empty-cart-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.empty-cart-state i {
+  font-size: 3rem;
+  color: #ddd;
+}
+
+.empty-cart-state p {
+  color: #666;
+  margin: 0;
+}
+
+.continue-shopping {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Savat elementlari */
+.cart-items-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Narxlar */
+.cart-item-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: #e63946;
+  font-weight: 800;
+}
+
+.discounted-price {
+  font-weight: 600;
+  color: #2cbb00;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.discount-badge {
+  background-color: #ff4444;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Miqdor boshqaruv */
+.cart-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.quantity-control button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Jami summa */
+.cart-summary {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Tugmalar */
+.cart-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.clear-cart-btn, .checkout-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.clear-cart-btn {
+  background-color: #f5f5f5;
+  color: #ff4444;
+}
+
+.checkout-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.checkout-btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Responsive dizayn */
+@media (min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    max-width: 500px;
+    border-radius: 20px;
+    max-height: 90vh;
+  }
+}
+
+/* Table number styles */
+.table-number-input-container {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.table-number-input-container label {
+  font-weight: 600;
+  color: #333;
+}
+
+.table-number-input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.confirm-table-btn {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirm-table-btn:hover {
+  background-color: #218838;
+}
+
+.table-number-display {
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change-table-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.change-table-btn:hover {
+  text-decoration: underline;
+}
+/* Validation styles */
+.validation-error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.validation-error i {
+  font-size: 12px;
+}
+
+.input-error {
+  border-color: #dc3545 !important;
+}
+
+.input-error:focus {
+  outline-color: #dc3545;
+}
+
+.confirm-table-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Input number arrows hide */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.cart-item-category {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}

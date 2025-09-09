@@ -1,0 +1,166 @@
+/* === Overlay & Container === */
+.product-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1001;
+  backdrop-filter: blur(6px);
+}
+
+.product-modal-content {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -6px 32px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: fadeUp 0.35s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-modal-content {
+    max-width: 480px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+}
+
+/* === Header === */
+.product-modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 14px;
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #111827;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+.modal-close-btn:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+.modal-close-btn:active {
+  transform: scale(0.95);
+}
+
+/* === Image === */
+.modal-image-container {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+.product-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+.modal-image-container:hover .product-modal-image {
+  transform: scale(1.04);
+}
+
+/* === Body === */
+.modal-details {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #111827;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* === Sizes Table === */
+.sizes-table-wrapper {
+  background: #f9fafb;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sizes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.sizes-table thead th {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 700;
+}
+
+.sizes-table tbody td {
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #f1f5f9;
+  transition: background 0.3s;
+}
+.sizes-table tbody tr:hover td {
+  background: #f0fdf4;
+}
+
+.sizes-table td:first-child {
+  font-weight: 600;
+  color: #111827;
+}
+.sizes-table td:last-child {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* === Description === */
+.section-title {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.product-description {
+  color: #4b5563;
+  line-height: 1.55;
+  margin: 0;
+  font-size: 0.95rem;
+}
